@@ -1,0 +1,121 @@
+* {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* img {
+    display: none;
+} */
+
+
+body {
+    background-color: hsl(217, 54%, 11%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    background-color: hsl(216, 50%, 16%);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+img.feature {
+    width: 100%;
+
+}
+
+img.feature:hover {
+    opacity: 0.5;
+}
+
+h3, span{
+    color: #fff;
+}
+
+h3:hover {
+    color:hsl(178, 100%, 50%);
+}
+
+p {
+    color: hsl(215, 51%, 70%)
+}
+
+h4 {
+    color: hsl(178, 100%, 50%);
+}
+
+.eth img, .view img {
+
+    margin-right: 5px;
+}
+
+.eth {
+    display: flex;
+    height: 20px;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view {
+    display: flex;
+    align-items: center
+}
+
+.view img {
+    width: 20px;
+
+}
+
+.line {
+padding: 0.5px;
+    background-color: hsl(215, 32%, 27%);
+}
+
+.creator img {
+    width: 35px;
+    border-radius: 50%;
+    border: solid 1px #fff;
+    margin-right: 10px;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+p.description {
+    margin: 0px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+background-color: hsl(178, 100%, 50%);
+border-radius: 15px;
+align-items: center;
+justify-content: center;
+}
+
+.hover-view {
+    display: none;
+    /* position: absolute; */
+}
+
+/* .hover-view:hover {
+    display: none;
+} */
+
+span:hover {
+    color: hsl(178, 100%, 50%);;
+}
