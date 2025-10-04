@@ -1,5 +1,5 @@
 *{
-    font-family: montserrat;
+    font-family: sans-serif;
 }
 
 
@@ -70,4 +70,12 @@ hr{
 
 #stop {
     display: none;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 350px) {
+    .container {
+        width: 300px;
+    }
+    
 }
