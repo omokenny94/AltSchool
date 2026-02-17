@@ -12,7 +12,7 @@ Authenticated users are only allowed to modify tasks they own using secure token
 
 ## Live Demo
 
-Deployed URL: https://YOUR-DEPLOYED-LINK.vercel.app
+Deployed URL: https://examination-project-seven.vercel.app/
 
 Repository URL: https://github.com/YOUR-USERNAME/YOUR-REPO
 
