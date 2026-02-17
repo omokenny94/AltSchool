@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  /* text-align: center; */
+}
+
+
+
+
+
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.container {
+  border: 1px solid #000;
+  width: 400px;
+
+  border-radius: 20px;
+  padding: 30px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.task-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.task-area {
+  background-color: #e4fcff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.w-24 {
+  width: 100% !important;
+}
+
+hr {
+  margin: 15px 0;
+  color: rgb(192, 192, 192);
+}
+
+.task {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.dandt {
+  display: flex;
+  flex-direction: row;
+}
+
+.task-functions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.btn-info {
+  color: white;
+}
+
+.todo-details {
+    background-color: #e4fcff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.profile {
+    background-color: #e4fcff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 20px;
+  width: 500px;
+}

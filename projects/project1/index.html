@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Project</title>
+    <!-- <script src="index.js"></script> -->
+    <script src="dom.js"></script>
+</head>
+<body>
+    <!-- <h1 class="title" id="mylists">My Lists</h1>
+    
+    <ul>
+        <li>UnOrdered List 1</li>
+        <li>UnOrdered List 2</li>
+        <li>UnOrdered List 3</li>
+        <li>UnOrdered List 4</li>
+        <li>UnOrdered List 5</li>
+    </ul>
+
+        <ol>
+        <li>Ordered List 1</li>
+        <li>Ordered List 2</li>
+        <li>Ordered List 3</li>
+        <li>Ordered List 4</li>
+        <li>Ordered List 5</li>
+    </ol>
+
+    <button id="change_text">Change Text</button>
+
+    <button id="change_color">Change Color</button> -->
+
+    <h1>What's your name</h1>
+    <form action="" method="post" id="myForm">
+        <label for="name">Enter your name here</label>
+        <input type="text" name="name" id="name">
+        <input type="submit" name="submit" id="submit">
+
+
+    </form>
+
+
+    <p>My name is: <span id="myname"></span></p>
+
+
+<script>
+    let form = document.getElementById("myForm");
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
+
+
+
+    let myName = document.getElementById("name")
+
+    let newName = document.getElementById("myname")
+
+    function getNameValue(myName) {
+        nameValue = myName.value
+
+        return
+    }
+    
+    function showName (){
+        newName.innerHTML = `<h2>${myName.value}</h2>`
+            console.log(myName.value)
+    }
+
+    form.addEventListener('submit', showName)
+    
+    
+    
+    
+    // let myLists = document.getElementById("mylists")
+
+    
+
+    // console.log(myLists)
+
+    // myLists.innerText = "New List"
+
+    // let myColors = ["red", "green", "blue", "pink", "yellow", "violet", "orange"]
+
+    // let color = "blue"
+
+
+    // function changeText() {
+    //     myLists.innerText = "Clicked Lists"
+
+    //     return
+    // }
+    
+
+    // function changeColor() {
+    //     myLists.style.color = myColors[Math.floor(Math.random() * myColors.length)]
+
+    //     return
+    // }
+
+    // let textButton = document.getElementById("change_text")
+
+    // let colorButton = document.getElementById("change_color")
+
+
+    
+
+    // textButton.addEventListener("click", changeText)
+
+    //  colorButton.addEventListener("click", changeColor)
+
+    // myLists.innerHTML = "<h1>Yes List</h2>"
+
+</script>
+</body>
+</html>
