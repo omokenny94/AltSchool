@@ -7,6 +7,7 @@ import React from "react";
 import Login from "./pages/Login";
 import ProtectedRoute from "./routes/ProtectedRoutes";
 import Profile from "./pages/Profile";
+import Register from "./api/register";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/crash" element={<CrashTest />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
 
       {/* <div className="container">

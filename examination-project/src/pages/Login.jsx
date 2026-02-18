@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../api/Auth";
 import { useAuth } from "../context/AuthContext";
 
@@ -31,7 +31,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center flex-col">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-sm space-y-4 border p-6 rounded"
@@ -60,6 +60,12 @@ export default function Login() {
           Sign in
         </button>
       </form>
+      <p className="mt-4 text-sm">
+        Don’t have an account?{" "}
+        <Link to="/register" className="text-blue-600 underline">
+          Sign up
+        </Link>
+      </p>
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function Home() {
   const queryClient = useQueryClient();
 
   //Read User
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
 
   // Modal
   const [openModal, setOpenModal] = useState(false);
@@ -36,11 +36,12 @@ export default function Home() {
     queryFn: () => getTasks(page),
     keepPreviousData: true,
     staleTime: 1000 * 60 * 5,
+    enabled: !!user && !loading,
   });
 
- const allTasks = data?.data || [];
+  const allTasks = data?.data || [];
 
-const tasks = allTasks.filter((task) => task.owner === user?.id);
+  const tasks = allTasks.filter((task) => task.owner === user?.id);
 
   const meta = data?.meta || {};
 
@@ -107,7 +108,8 @@ const tasks = allTasks.filter((task) => task.owner === user?.id);
     },
   });
 
-if (isLoading || !user) return <div className="p-6">Loading tasks...</div>;
+  if (loading) return <div className="p-6">Restoring session...</div>;
+  if (isLoading || !user) return <div className="p-6">Loading tasks...</div>;
   if (isError)
     return <div className="p-6 text-red-500">Error loading tasks.</div>;
 
@@ -128,20 +130,15 @@ if (isLoading || !user) return <div className="p-6">Loading tasks...</div>;
   return (
     <div className="p-6 max-w-2xl mx-auto ">
       <div className="flex justify-between items-center mb-6 vertical-center">
-<h1 className="text-xl font-bold">
-        {user ? `Welcome back ${user.name}` : "Welcome"}
-      </h1>
+        <h1 className="text-xl font-bold">
+          {user ? `Welcome back ${user.name}` : "Welcome"}
+        </h1>
 
-      <Link
-    to="/profile"
-    className="text-sm underline text-blue-600"
-  >
-    Profile
-  </Link>
-        
+        <Link to="/profile" className="text-sm underline text-blue-600">
+          Profile
+        </Link>
       </div>
-      
-      
+
       <div className="task-area">
         <div className="flex justify-between items-center ">
           <h1 className="text-2xl font-bold mb-4 ">Tasks</h1>

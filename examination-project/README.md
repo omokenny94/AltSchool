@@ -36,6 +36,8 @@ Repository URL: https://github.com/omokenny94/AltSchool/tree/main/examination-pr
 * Delete task (owner only)
 * Optimistic UI updates using React Query
 * Token-based authorization (JWT)
+* Login 
+* Register
 * User profile page
 
 ---
