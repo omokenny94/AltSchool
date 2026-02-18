@@ -14,7 +14,7 @@ Authenticated users are only allowed to modify tasks they own using secure token
 
 Deployed URL: https://examination-project-seven.vercel.app/
 
-Repository URL: https://github.com/YOUR-USERNAME/YOUR-REPO
+Repository URL: https://github.com/omokenny94/AltSchool/tree/main/examination-project
 
 ---
 
