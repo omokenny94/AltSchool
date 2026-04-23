@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { register } from "../api/Auth";
+import { useState, ChangeEvent, FormEvent } from "react";
+import { register } from "./Auth";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
@@ -14,11 +14,11 @@ export default function Register() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
     setError("");
 
@@ -27,14 +27,15 @@ export default function Register() {
       await register(form);
       navigate("/login");
     } catch (err) {
-      setError(err.response?.data?.message || "Registration failed");
+      const message = err instanceof Error ? err.message : "Registration failed";
+      setError((err as any)?.response?.data?.message || message);
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   return (
-    <div >
+    <div className="flex items-center justify-center min-h-screen bg-gray-50">
       <div className="w-full max-w-sm space-y-4 border p-6 rounded">
         <h1 className="text-xl font-bold text-center">Create Account</h1>
 

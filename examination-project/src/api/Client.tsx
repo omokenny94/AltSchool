@@ -11,12 +11,12 @@ if (token) {
 }
 
 /* Function to update token after login/logout */
-export const setAuthToken = (newToken) => {
+export function setAuthToken(newToken: null): void {
   if (newToken) {
     apiClient.defaults.headers.common["Authorization"] = `Bearer ${newToken}`;
   } else {
     delete apiClient.defaults.headers.common["Authorization"];
   }
-};
+}
 
 export default apiClient;

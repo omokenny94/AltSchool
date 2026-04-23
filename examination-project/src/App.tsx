@@ -7,7 +7,8 @@ import React from "react";
 import Login from "./pages/Login";
 import ProtectedRoute from "./routes/ProtectedRoutes";
 import Profile from "./pages/Profile";
-import Register from "./api/register";
+import Register from "./api/Register";
+
 
 
 function App() {

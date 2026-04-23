@@ -8,7 +8,8 @@ function TaskDetails() {
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["task", id],
-    queryFn: () => getTaskById(id),
+    queryFn: () => getTaskById(id!),
+    enabled: !!id,
   });
 
   if (isLoading) {
@@ -25,6 +26,9 @@ function TaskDetails() {
 
   const task = data;
 
+  if (!task) {
+    return <div className="p-6">Task not found.</div>;
+  }
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
@@ -34,7 +38,7 @@ function TaskDetails() {
         &larr; Back to List
       </Link>
 
-      <div className="p-4 border rounded-lg p-6 space-y-3 todo-details">
+      <div className="border rounded-lg p-6 space-y-3 todo-details">
         <h2 className="text-2xl font-bold">{task.title}</h2>
 
         <p

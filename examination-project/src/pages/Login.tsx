@@ -5,35 +5,34 @@ import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { checkAuth } = useAuth();
+  useAuth();
   const { setUser } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-
-    try {
-      const data = await login({ email, password });
-
-      localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken);
-
-      setUser(data.user);
-      navigate("/");
-    } catch (err) {
-      console.log(err);
-      setError(err.response?.data?.message || "Login failed");
-    }
-  };
 
   return (
     <div className="min-h-screen flex items-center justify-center flex-col">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={async (e) => {
+          e.preventDefault();
+          setError("");
+
+          try {
+            const data = await login({ email, password });
+
+            localStorage.setItem("accessToken", data.accessToken);
+            localStorage.setItem("refreshToken", data.refreshToken);
+
+            setUser(data.user);
+            navigate("/");
+          } catch (err) {
+            const errorMessage = (err as any).response?.data?.message || "Login failed";
+            setError(errorMessage);
+          }
+        }}
         className="w-full max-w-sm space-y-4 border p-6 rounded"
       >
         <h1 className="text-xl font-bold text-center">Login</h1>

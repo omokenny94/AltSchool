@@ -1,7 +1,6 @@
 import { useAuth } from "../context/AuthContext";
 import { logout } from "../api/Auth";
 import { useNavigate } from "react-router-dom";
-import "../App.css";
 import { Link, useParams } from "react-router-dom";
 
 export default function Profile() {

@@ -1,8 +1,8 @@
-import apiClient, { setAuthToken } from "../api/Client";
+import apiClient, { setAuthToken } from "./Client";
 
 
 
-export const login = async (payload) => {
+export const login = async (payload: { email: string; password: string; }) => {
   const { data } = await apiClient.post("/auth/login", payload);
 
   localStorage.setItem("accessToken", data.accessToken);
@@ -13,7 +13,7 @@ export const login = async (payload) => {
   return data;
 };
 
-export const register = async (payload) => {
+export const register = async (payload: { name: string; email: string; password: string; }) => {
   const { data } = await apiClient.post("/auth/register", payload);
   return data;
 };
