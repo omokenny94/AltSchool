@@ -55,7 +55,7 @@ export default function Home() {
   const allTasks = data?.data ?? [];
   const meta = data?.meta ?? { page: 1, totalPages: 1, hasNextPage: false, hasPreviousPage: false };
 
-  // --- Mutations  ---
+  // --- Mutations ---
   const createMutation = useMutation({
     mutationFn: createTask,
     onSuccess: () => {
