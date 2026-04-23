@@ -48,14 +48,14 @@ export default function Home() {
   const { data, isLoading, isError } = useQuery<PaginatedTasks>({
     queryKey: ["tasks", page],
     queryFn: () => getTasks(page),
-    // Only fetch if user is logged in
+    // Only fetch if user is logged in *
     enabled: !!user,
   });
 
   const allTasks = data?.data ?? [];
   const meta = data?.meta ?? { page: 1, totalPages: 1, hasNextPage: false, hasPreviousPage: false };
 
-  // --- Mutations ---
+  // --- Mutations  ---
   const createMutation = useMutation({
     mutationFn: createTask,
     onSuccess: () => {
